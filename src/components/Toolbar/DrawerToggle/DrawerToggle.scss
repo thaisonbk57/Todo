@@ -1,1 +1,20 @@
 @import "./../../../abstracts";
+
+.DrawerToggle {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate(0, -50%);
+
+  span {
+    display: block;
+    height: 3px;
+    background: $color-white;
+    width: 25px;
+    box-shadow: 1px 1px 1px #000;
+
+    &:not(:first-child) {
+      margin-top: 0.6rem;
+    }
+  }
+}
