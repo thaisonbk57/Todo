@@ -1,0 +1,11 @@
+@import "./../../abstracts";
+
+.Toolbar {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 5rem;
+  background: $color-primary;
+}
