@@ -6,7 +6,7 @@ import "./Toolbar.scss";
 
 ///////////////////////////
 
-import DrawerToggle from "./DrawerToggle/DrawerToggle";
+import DrawerToggle from "./SideDrawerToggle/SideDrawerToggle";
 
 ///////////////////////////
 

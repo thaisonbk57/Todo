@@ -2,7 +2,7 @@ import React from "react";
 
 /////////////////////////
 
-import "./DrawerToggle.scss";
+import "./SideDrawerToggle.scss";
 
 /////////////////////////
 
