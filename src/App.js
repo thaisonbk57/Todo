@@ -7,6 +7,7 @@ import "./App.scss";
 //////////////////////////////////////////
 
 import Layout from "./HOC/Layout/Layout";
+import TodoBuilder from "./containers/TodoBuilder/TodoBuilder";
 
 //////////////////////////////////////////
 
@@ -14,7 +15,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Layout />
+        <Layout>
+          <TodoBuilder />
+        </Layout>
       </div>
     );
   }
