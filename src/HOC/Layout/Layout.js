@@ -34,6 +34,7 @@ export default class Layout extends Component {
           toggle={this.toggleSideDrawerHandler}
           show={this.state.showBackdrop}
         />
+        <main>{this.props.children}</main>
       </div>
     );
   }
