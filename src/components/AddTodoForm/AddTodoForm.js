@@ -8,16 +8,19 @@ import "./AddTodoForm.scss";
 
 export default class AddTodoForm extends Component {
   state = {
-    task: ""
+    todo: {
+      task: "",
+      completed: false
+    }
   };
 
   onInputChanged = e => {
     const target = e.target;
     let value = target.value;
 
-    this.setState(() => {
+    this.setState(state => {
       return {
-        task: value
+        todo: { ...state.todo, task: value }
       };
     });
   };
@@ -27,14 +30,16 @@ export default class AddTodoForm extends Component {
       <div className="AddTodoForm">
         <div className="form-group">
           <input
-            value={this.state.task}
+            value={this.state.todo.task}
             type="text"
             className="form-control"
             onChange={e => {
               this.onInputChanged(e);
             }}
           />
-          <button />
+          <button
+            onClick={this.props.addTodoHandler.bind(this, this.state.todo)}
+          />
         </div>
       </div>
     );
