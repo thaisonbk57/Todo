@@ -6,7 +6,7 @@ import "./Toolbar.scss";
 
 ///////////////////////////
 
-import DrawerToggle from "./SideDrawerToggle/SideDrawerToggle";
+import SideDrawerToggle from "./SideDrawerToggle/SideDrawerToggle";
 
 ///////////////////////////
 
@@ -15,7 +15,7 @@ import Logo from "./../UI/Logo/Logo";
 const Toolbar = props => {
   return (
     <div className="Toolbar">
-      <DrawerToggle />
+      <SideDrawerToggle toggle={props.toggle} />
       <Logo />
     </div>
   );

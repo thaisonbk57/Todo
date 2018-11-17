@@ -6,9 +6,9 @@ import "./SideDrawerToggle.scss";
 
 /////////////////////////
 
-const DrawerToggle = () => {
+const DrawerToggle = props => {
   return (
-    <div className="DrawerToggle">
+    <div onClick={props.toggle} className="DrawerToggle">
       <span />
       <span />
       <span />

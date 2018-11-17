@@ -12,11 +12,21 @@ import SideDrawer from "./../../components/SideDrawer/SideDrawer";
 /////////////////////
 
 export default class Layout extends Component {
+  state = {
+    showSideDrawer: false
+  };
+
+  toggleSideDrawerHandler = () => {
+    this.setState({
+      showSideDrawer: !this.state.showSideDrawer
+    });
+  };
+
   render() {
     return (
       <div className="Layout">
-        <SideDrawer />
-        <Toolbar />
+        <SideDrawer show={this.state.showSideDrawer} />
+        <Toolbar toggle={this.toggleSideDrawerHandler} />
       </div>
     );
   }
