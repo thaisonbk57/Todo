@@ -56,10 +56,11 @@ export default class TodoBuilder extends Component {
   };
 
   clearCompletedTodos = () => {
-    let newTodos = this.state.todos.filter(todo => todo.completed === true);
+    console.log(2);
+    let newTodos = this.state.todos.filter(todo => todo.completed === false);
 
     this.setState(() => ({
-      todo: newTodos
+      todos: newTodos
     }));
   };
 

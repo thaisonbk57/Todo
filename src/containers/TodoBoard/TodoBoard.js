@@ -25,10 +25,10 @@ class TodoBoard extends PureComponent {
   };
 
   render() {
-    console.log(1);
     let {
       toggleTodoCompleteHandler,
       deleteTodoItemHandler,
+      clearCompletedTodos,
       todos
     } = this.props;
 
@@ -55,6 +55,7 @@ class TodoBoard extends PureComponent {
         <Filter
           visibility={this.state.visibility}
           visibilitySwitchHandler={this.visibilitySwitchHandler}
+          clearCompletedTodos={clearCompletedTodos}
         />
       </div>
     );

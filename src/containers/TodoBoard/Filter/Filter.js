@@ -7,7 +7,7 @@ import "./Filter.scss";
 ////////////////////////
 
 const Filter = props => {
-  const { visibilitySwitchHandler, visibility } = props;
+  const { visibilitySwitchHandler, visibility, clearCompletedTodos } = props;
 
   return (
     <div className="Filter">
@@ -36,6 +36,15 @@ const Filter = props => {
         }
       >
         Completed
+      </button>
+      <button
+        onClick={() => {
+          clearCompletedTodos();
+        }}
+        className="btn btn-sm"
+        style={{ color: "red" }}
+      >
+        Clear completed
       </button>
     </div>
   );
