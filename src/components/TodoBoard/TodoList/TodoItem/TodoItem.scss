@@ -1,0 +1,42 @@
+@import "./../../../../abstracts";
+
+.TodoItem {
+  width: 100%;
+  background: $color-gray-light-1;
+  padding: 0.5rem 0.8rem;
+  color: $color-white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+
+  label {
+    background: $color-white;
+    align-self: stretch;
+    width: 2.6rem;
+    margin: 0 1rem 0 0;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ span {
+      text-decoration: line-through;
+      color: #cac3c3;
+      // font-weight: 300;
+    }
+
+    &:checked + label {
+      background: $color-primary;
+    }
+  }
+
+  span {
+    transition: 0.3s;
+  }
+}
