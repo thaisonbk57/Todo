@@ -57,4 +57,4 @@ class TodoBoard extends Component {
   }
 }
 
-export default TodoBoard;
+export default React.memo(TodoBoard);
