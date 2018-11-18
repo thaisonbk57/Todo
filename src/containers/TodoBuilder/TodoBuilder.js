@@ -31,7 +31,7 @@ export default class TodoBuilder extends Component {
     } else return;
   };
 
-  toggleTodoHandler = id => {
+  toggleTodoCompleteHandler = id => {
     let newTodos = this.state.todos.map(todo => {
       if (todo.id === id) {
         return { ...todo, completed: true };
@@ -50,7 +50,10 @@ export default class TodoBuilder extends Component {
     return (
       <div className="TodoBuilder">
         <AddTodoForm addTodoHandler={this.addTodoHandler} />
-        <TodoBoard todos={this.state.todos} />
+        <TodoBoard
+          todos={this.state.todos}
+          toggleTodoCompleteHandler={this.toggleTodoCompleteHandler}
+        />
       </div>
     );
   }
