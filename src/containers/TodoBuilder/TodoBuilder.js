@@ -7,6 +7,9 @@ import "./TodoBuilder.scss";
 ///////////////////////////////////
 
 import AddTodoForm from "./../../components/AddTodoForm/AddTodoForm";
+import TodoBoard from "./../../components/TodoBoard/TodoBoard";
+
+////////////////////////////////////
 
 export default class TodoBuilder extends Component {
   state = {
@@ -32,6 +35,7 @@ export default class TodoBuilder extends Component {
     return (
       <div className="TodoBuilder">
         <AddTodoForm addTodoHandler={this.addTodoHandler} />
+        <TodoBoard />
       </div>
     );
   }
