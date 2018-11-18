@@ -13,7 +13,8 @@ import TodoBoard from "./../../components/TodoBoard/TodoBoard";
 
 export default class TodoBuilder extends Component {
   state = {
-    todos: []
+    // todos: []
+    todos: [{ id: 1, task: "go shopping", completed: false }]
   };
 
   addTodoHandler = todo => {
@@ -41,6 +42,16 @@ export default class TodoBuilder extends Component {
     });
   };
 
+  deleteTodoItemHandler = id => {
+    let newTodos = this.state.todos.filter(todo => todo.id !== id);
+
+    this.setState(() => {
+      return {
+        todos: newTodos
+      };
+    });
+  };
+
   render() {
     return (
       <div className="TodoBuilder">
@@ -48,6 +59,7 @@ export default class TodoBuilder extends Component {
         <TodoBoard
           todos={this.state.todos}
           toggleTodoCompleteHandler={this.toggleTodoCompleteHandler}
+          deleteTodoItemHandler={this.deleteTodoItemHandler}
         />
       </div>
     );
