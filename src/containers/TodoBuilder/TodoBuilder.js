@@ -31,6 +31,21 @@ export default class TodoBuilder extends Component {
     } else return;
   };
 
+  toggleTodoHandler = id => {
+    let newTodos = this.state.todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: true };
+      } else return todo;
+    });
+
+    this.setState(state => {
+      return {
+        ...state,
+        todos: newTodos
+      };
+    });
+  };
+
   render() {
     return (
       <div className="TodoBuilder">
