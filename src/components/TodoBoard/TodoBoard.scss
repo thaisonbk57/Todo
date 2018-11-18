@@ -1,7 +1,7 @@
 @import "./../../abstracts";
 
 .TodoBoard {
-  background: red;
+  background: $color-gray-light-2;
   flex-basis: 100%;
   margin-top: 5rem;
   font-size: 1.8rem; //test
@@ -9,4 +9,5 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 3px;
+  padding: 2rem 0.8rem;
 }
