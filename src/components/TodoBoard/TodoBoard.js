@@ -6,11 +6,15 @@ import "./TodoBoard.scss";
 
 //////////////
 
+import TodoList from "./TodoList/TodoList";
+
+/////////////////
+
 const TodoBoard = props => {
   return (
     <div className="TodoBoard">
-      TodoList <br />
-      FilterPanel
+      <TodoList todos={props.todos} />
+      <div>Filter</div>
     </div>
   );
 };
