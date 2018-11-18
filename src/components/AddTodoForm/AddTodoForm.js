@@ -9,6 +9,7 @@ import "./AddTodoForm.scss";
 export default class AddTodoForm extends Component {
   state = {
     todo: {
+      id: null,
       task: "",
       completed: false
     }
@@ -38,7 +39,11 @@ export default class AddTodoForm extends Component {
             }}
           />
           <button
-            onClick={this.props.addTodoHandler.bind(this, this.state.todo)}
+            // using Timestamp as ID of new TodoItem
+            onClick={this.props.addTodoHandler.bind(this, {
+              ...this.state.todo,
+              id: new Date().getTime()
+            })}
           />
         </div>
       </div>
