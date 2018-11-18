@@ -10,6 +10,11 @@
     background: $color-white;
     font-size: 2rem;
 
+    &:focus {
+      box-shadow: 1px 1px 3px $color-primary, -1px -1px 3px $color-primary;
+      border-color: $color-primary;
+    }
+
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       color: $color-gray-light-1;

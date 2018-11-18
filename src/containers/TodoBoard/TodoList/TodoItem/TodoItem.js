@@ -6,6 +6,10 @@ import "./TodoItem.scss";
 
 ///////////////////////
 
+import ItemEdit from "./../../../../components/ItemEdit/ItemEdit";
+
+///////////////////////
+
 const TodoItem = props => {
   let { todo, toggleTodoCompleteHandler, deleteTodoItemHandler } = props;
 
@@ -29,6 +33,7 @@ const TodoItem = props => {
           }}
         />
       </div>
+      <ItemEdit todo={todo} />
     </li>
   );
 };
