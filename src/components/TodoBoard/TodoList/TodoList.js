@@ -10,12 +10,18 @@ import TodoItem from "./TodoItem/TodoItem";
 
 /////////////////////////////
 const TodoList = props => {
-  let { todos } = props;
+  let { todos, toggleTodoCompleteHandler } = props;
 
   return (
     <ul className="TodoList">
       {todos.map(todo => {
-        return <TodoItem key={todo.id} todo={todo} />;
+        return (
+          <TodoItem
+            toggleTodoCompleteHandler={toggleTodoCompleteHandler}
+            key={todo.id}
+            todo={todo}
+          />
+        );
       })}
     </ul>
   );
