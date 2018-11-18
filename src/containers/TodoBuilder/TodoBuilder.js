@@ -14,7 +14,10 @@ import TodoBoard from "./../TodoBoard/TodoBoard";
 export default class TodoBuilder extends Component {
   state = {
     // todos: []
-    todos: [{ id: 1, task: "go shopping", completed: false }]
+    todos: [
+      { id: 1, task: "go shopping", completed: true },
+      { id: 2, task: "walk the dog", completed: false }
+    ]
   };
 
   addTodoHandler = todo => {
