@@ -13,12 +13,7 @@ import TodoBoard from "./../../components/TodoBoard/TodoBoard";
 
 export default class TodoBuilder extends Component {
   state = {
-    todos: [
-      { id: 1, task: "do homework", completed: false },
-      { id: 2, task: "go shopping", completed: true },
-      { id: 3, task: "appointment with dentist", completed: false },
-      { id: 4, task: "walk the dog", completed: false }
-    ]
+    todos: []
   };
 
   addTodoHandler = todo => {
@@ -34,7 +29,7 @@ export default class TodoBuilder extends Component {
   toggleTodoCompleteHandler = id => {
     let newTodos = this.state.todos.map(todo => {
       if (todo.id === id) {
-        return { ...todo, completed: true };
+        return { ...todo, completed: !todo.completed };
       } else return todo;
     });
 
