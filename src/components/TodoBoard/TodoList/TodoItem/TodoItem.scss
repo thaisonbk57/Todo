@@ -23,6 +23,7 @@
     border-radius: 50%;
     transition: 0.3s;
     cursor: pointer;
+    background: $color-primary;
   }
 
   input {
@@ -35,7 +36,7 @@
     }
 
     &:checked + label {
-      background: $color-primary;
+      background: darken($color-gray-light-1, 10%);
     }
   }
 
