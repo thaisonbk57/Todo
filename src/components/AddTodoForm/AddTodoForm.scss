@@ -14,16 +14,16 @@
   button {
     position: absolute;
     right: 0;
-    top: 0;
-    height: 100%;
+    top: 50%;
     color: $color-white;
-    width: 40px;
+    width: 30px;
+    height: 30px;
     display: block;
     outline: none;
     border: none;
     background: $color-primary;
     border-radius: 50%;
-    transform: translateX(calc(100% + 1rem));
+    transform: translateX(calc(100% + 1rem)) translateY(-50%);
     cursor: pointer;
 
     &::after {
