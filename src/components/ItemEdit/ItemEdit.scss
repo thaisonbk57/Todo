@@ -1,0 +1,64 @@
+@import "./../../abstracts";
+
+.ItemEdit {
+  text-align: center;
+
+  input {
+    border-radius: 5px;
+    background: $color-white;
+    font-size: 2rem;
+    padding-right: 4.2rem;
+
+    &:focus {
+      box-shadow: 1px 1px 3px $color-primary, -1px -1px 3px $color-primary;
+      border-color: $color-primary;
+    }
+
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &:-moz-placeholder {
+      /* Firefox 18- */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-white;
+    width: 33px;
+    height: 33px;
+    display: block;
+    outline: none;
+    border: none;
+    background: $color-primary;
+    cursor: pointer;
+    border-radius: 3px;
+
+    &::after {
+      content: "OK";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
