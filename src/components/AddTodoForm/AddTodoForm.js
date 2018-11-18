@@ -26,6 +26,21 @@ export default class AddTodoForm extends Component {
     });
   };
 
+  submitHandler = e => {
+    if (e.type === "click" || e.keyCode === 13) {
+      this.props.addTodoHandler({
+        ...this.state.todo,
+        id: new Date().getTime()
+      });
+
+      this.setState(state => {
+        return {
+          todo: { ...state.todo, task: "" }
+        };
+      });
+    }
+  };
+
   render() {
     return (
       <div className="AddTodoForm">
@@ -37,13 +52,15 @@ export default class AddTodoForm extends Component {
             onChange={e => {
               this.onInputChanged(e);
             }}
+            onKeyDown={e => {
+              this.submitHandler(e);
+            }}
           />
           <button
             // using Timestamp as ID of new TodoItem
-            onClick={this.props.addTodoHandler.bind(this, {
-              ...this.state.todo,
-              id: new Date().getTime()
-            })}
+            onClick={e => {
+              this.submitHandler(e);
+            }}
           />
         </div>
       </div>
