@@ -20,7 +20,8 @@ const TodoItem = props => {
         defaultChecked={todo.completed}
       />
       <label htmlFor={todo.id} />
-      <span>{todo.task}</span>
+      <span className="task">{todo.task}</span>
+      <span className="delete" />
     </li>
   );
 };
