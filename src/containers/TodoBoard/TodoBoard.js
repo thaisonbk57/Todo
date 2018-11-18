@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
 /////////////
 
@@ -11,7 +11,7 @@ import Filter from "./Filter/Filter";
 
 /////////////////
 
-class TodoBoard extends Component {
+class TodoBoard extends PureComponent {
   state = {
     visibility: "all"
   };
@@ -25,6 +25,7 @@ class TodoBoard extends Component {
   };
 
   render() {
+    console.log(1);
     let {
       toggleTodoCompleteHandler,
       deleteTodoItemHandler,
@@ -51,7 +52,10 @@ class TodoBoard extends Component {
           toggleTodoCompleteHandler={toggleTodoCompleteHandler}
           deleteTodoItemHandler={deleteTodoItemHandler}
         />
-        <Filter visibilitySwitchHandler={this.visibilitySwitchHandler} />
+        <Filter
+          visibility={this.state.visibility}
+          visibilitySwitchHandler={this.visibilitySwitchHandler}
+        />
       </div>
     );
   }
