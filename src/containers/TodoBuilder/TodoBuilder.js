@@ -35,7 +35,7 @@ export default class TodoBuilder extends Component {
     return (
       <div className="TodoBuilder">
         <AddTodoForm addTodoHandler={this.addTodoHandler} />
-        <TodoBoard />
+        <TodoBoard todos={this.state.todos} />
       </div>
     );
   }
