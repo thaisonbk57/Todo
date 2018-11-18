@@ -27,6 +27,7 @@ export default class AddTodoForm extends Component {
   };
 
   submitHandler = e => {
+    // click || press Enter key
     if (e.type === "click" || e.keyCode === 13) {
       this.props.addTodoHandler({
         ...this.state.todo,
