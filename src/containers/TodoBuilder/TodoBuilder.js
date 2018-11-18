@@ -55,6 +55,14 @@ export default class TodoBuilder extends Component {
     });
   };
 
+  clearCompletedTodos = () => {
+    let newTodos = this.state.todos.filter(todo => todo.completed === true);
+
+    this.setState(() => ({
+      todo: newTodos
+    }));
+  };
+
   render() {
     return (
       <div className="TodoBuilder">
@@ -64,6 +72,7 @@ export default class TodoBuilder extends Component {
             todos={this.state.todos}
             toggleTodoCompleteHandler={this.toggleTodoCompleteHandler}
             deleteTodoItemHandler={this.deleteTodoItemHandler}
+            clearCompletedTodos={this.clearCompletedTodos}
           />
         ) : (
           <h2
