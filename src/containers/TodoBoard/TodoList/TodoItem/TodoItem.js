@@ -11,22 +11,24 @@ const TodoItem = props => {
 
   return (
     <li className="TodoItem">
-      <input
-        type="checkbox"
-        id={todo.id}
-        onChange={() => {
-          toggleTodoCompleteHandler(todo.id);
-        }}
-        defaultChecked={todo.completed}
-      />
-      <label htmlFor={todo.id} />
-      <span className="task">{todo.task}</span>
-      <span
-        className="delete"
-        onClick={() => {
-          deleteTodoItemHandler(todo.id);
-        }}
-      />
+      <div className="TodoContent">
+        <input
+          type="checkbox"
+          id={todo.id}
+          onChange={() => {
+            toggleTodoCompleteHandler(todo.id);
+          }}
+          defaultChecked={todo.completed}
+        />
+        <label htmlFor={todo.id} />
+        <span className="task">{todo.task}</span>
+        <span
+          className="delete"
+          onClick={() => {
+            deleteTodoItemHandler(todo.id);
+          }}
+        />
+      </div>
     </li>
   );
 };
