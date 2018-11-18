@@ -7,14 +7,14 @@ import "./TodoBuilder.scss";
 ///////////////////////////////////
 
 import AddTodoForm from "./../../components/AddTodoForm/AddTodoForm";
-import TodoBoard from "./../../components/TodoBoard/TodoBoard";
+import TodoBoard from "./../TodoBoard/TodoBoard";
 
 ////////////////////////////////////
 
 export default class TodoBuilder extends Component {
   state = {
-    todos: []
-    // todos: [{ id: 1, task: "go shopping", completed: false }]
+    // todos: []
+    todos: [{ id: 1, task: "go shopping", completed: false }]
   };
 
   addTodoHandler = todo => {
