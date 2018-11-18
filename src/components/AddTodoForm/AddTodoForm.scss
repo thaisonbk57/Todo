@@ -9,6 +9,27 @@
     border-radius: 5px;
     background: $color-white;
     font-size: 2rem;
+
+    &::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &:-ms-input-placeholder {
+      /* IE 10+ */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
+    &:-moz-placeholder {
+      /* Firefox 18- */
+      color: $color-gray-light-1;
+      font-size: 1.8rem;
+    }
   }
 
   button {

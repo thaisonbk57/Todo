@@ -49,6 +49,7 @@ export default class AddTodoForm extends Component {
           <input
             value={this.state.todo.task}
             type="text"
+            placeholder="Enter new task..."
             className="form-control"
             onChange={e => {
               this.onInputChanged(e);
