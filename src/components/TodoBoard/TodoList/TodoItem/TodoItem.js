@@ -7,7 +7,7 @@ import "./TodoItem.scss";
 ///////////////////////
 
 const TodoItem = props => {
-  let { todo, toggleTodoCompleteHandler } = props;
+  let { todo, toggleTodoCompleteHandler, deleteTodoItemHandler } = props;
 
   return (
     <li className="TodoItem">
@@ -21,7 +21,12 @@ const TodoItem = props => {
       />
       <label htmlFor={todo.id} />
       <span className="task">{todo.task}</span>
-      <span className="delete" />
+      <span
+        className="delete"
+        onClick={() => {
+          deleteTodoItemHandler(todo.id);
+        }}
+      />
     </li>
   );
 };

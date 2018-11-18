@@ -10,7 +10,7 @@ import TodoItem from "./TodoItem/TodoItem";
 
 /////////////////////////////
 const TodoList = props => {
-  let { todos, toggleTodoCompleteHandler } = props;
+  let { todos, toggleTodoCompleteHandler, deleteTodoItemHandler } = props;
 
   return (
     <ul className="TodoList">
@@ -18,6 +18,7 @@ const TodoList = props => {
         return (
           <TodoItem
             toggleTodoCompleteHandler={toggleTodoCompleteHandler}
+            deleteTodoItemHandler={deleteTodoItemHandler}
             key={todo.id}
             todo={todo}
           />
