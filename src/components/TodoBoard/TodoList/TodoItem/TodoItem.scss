@@ -71,26 +71,35 @@
     opacity: 0;
     cursor: pointer;
 
+    &:hover {
+      &:before,
+      &:after {
+        background: red;
+      }
+    }
+
     &::before {
       content: "";
       display: block;
       position: absolute;
       height: 2px;
       width: 100%;
-      background: red;
+      background: lightcoral;
       top: 50%;
       left: 0;
+      transition: 0.3s;
       transform: translateY(-50%) rotateZ(45deg);
-      transform-origin: center;
+      // transform-origin: center;
     }
 
     &::after {
       content: "";
       display: block;
+      transition: 0.3s;
       position: absolute;
       height: 2px;
       width: 100%;
-      background: red;
+      background: lightcoral;
       top: 50%;
       left: 0;
       transform: translateY(-50%) rotateZ(-45deg);
