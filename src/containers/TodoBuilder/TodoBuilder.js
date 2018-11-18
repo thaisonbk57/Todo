@@ -18,7 +18,7 @@ export default class TodoBuilder extends Component {
   };
 
   addTodoHandler = todo => {
-    if (!!todo) {
+    if (todo.task.trim()) {
       this.setState(state => {
         return {
           todos: [...state.todos, todo]
