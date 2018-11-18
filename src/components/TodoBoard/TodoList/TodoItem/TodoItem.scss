@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  border-radius: 3px;
 
   &:not(:first-child) {
     margin-top: 1rem;
