@@ -28,6 +28,7 @@ class TodoBoard extends PureComponent {
     let {
       toggleTodoCompleteHandler,
       deleteTodoItemHandler,
+      updateTodoItemHandler,
       clearCompletedTodos,
       todos
     } = this.props;
@@ -51,6 +52,7 @@ class TodoBoard extends PureComponent {
           todos={filteredTodos}
           toggleTodoCompleteHandler={toggleTodoCompleteHandler}
           deleteTodoItemHandler={deleteTodoItemHandler}
+          updateTodoItemHandler={updateTodoItemHandler}
         />
         <Filter
           visibility={this.state.visibility}

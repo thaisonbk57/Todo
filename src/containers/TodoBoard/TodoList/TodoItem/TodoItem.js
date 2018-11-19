@@ -11,7 +11,12 @@ import ItemEdit from "./../../../../components/ItemEdit/ItemEdit";
 ///////////////////////
 
 const TodoItem = props => {
-  let { todo, toggleTodoCompleteHandler, deleteTodoItemHandler } = props;
+  let {
+    todo,
+    toggleTodoCompleteHandler,
+    deleteTodoItemHandler,
+    updateTodoItemHandler
+  } = props;
 
   return (
     <li className="TodoItem">
@@ -33,7 +38,7 @@ const TodoItem = props => {
           }}
         />
       </div>
-      <ItemEdit todo={todo} />
+      <ItemEdit todo={todo} updateTodoItemHandler={updateTodoItemHandler} />
     </li>
   );
 };

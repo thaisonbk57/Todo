@@ -55,6 +55,23 @@ export default class TodoBuilder extends Component {
     });
   };
 
+  updateTodoItemHandler = (id, newContent) => {
+    let newTodos = this.state.todos.map(todo => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          task: newContent
+        };
+      }
+
+      return todo;
+    });
+
+    this.setState(() => {
+      return { todos: newTodos };
+    });
+  };
+
   clearCompletedTodos = () => {
     console.log(2);
     let newTodos = this.state.todos.filter(todo => todo.completed === false);
@@ -73,6 +90,7 @@ export default class TodoBuilder extends Component {
             todos={this.state.todos}
             toggleTodoCompleteHandler={this.toggleTodoCompleteHandler}
             deleteTodoItemHandler={this.deleteTodoItemHandler}
+            updateTodoItemHandler={this.updateTodoItemHandler}
             clearCompletedTodos={this.clearCompletedTodos}
           />
         ) : (
