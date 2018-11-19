@@ -2,6 +2,22 @@
 
 .ItemEdit {
   text-align: center;
+  flex-basis: 36px;
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  // background: $color-gray-light-1;
+  // padding: 0.5rem 0.8rem;
+  color: $color-white;
+  // display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  // flex-direction: row;
+  border-radius: 3px;
+
+  &:not(:first-child) {
+    margin-top: 0.7rem;
+  }
 
   input {
     border-radius: 5px;
