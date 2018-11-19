@@ -13,12 +13,30 @@ import TodoBoard from "./../TodoBoard/TodoBoard";
 
 export default class TodoBuilder extends Component {
   state = {
-    // todos: []
-    todos: [
-      { id: 1, task: "go shopping", completed: true },
-      { id: 2, task: "walk the dog", completed: false }
-    ]
+    todos: []
+    // todos: [
+    //   { id: 1, task: "go shopping", completed: true },
+    //   { id: 2, task: "walk the dog", completed: false }
+    // ]
   };
+
+  componentDidMount() {
+    // get data from localStorage if available
+    let initData = localStorage.getItem("todo-app");
+
+    if (!!initData) {
+      this.setState(() => {
+        return { todos: JSON.parse(initData) };
+      });
+    }
+  }
+
+  componentDidUpdate() {
+    // updated the localStorage
+    let todoString = JSON.stringify(this.state.todos);
+
+    localStorage.setItem("todo-app", todoString);
+  }
 
   addTodoHandler = todo => {
     if (todo.task.trim()) {
@@ -73,7 +91,6 @@ export default class TodoBuilder extends Component {
   };
 
   clearCompletedTodos = () => {
-    console.log(2);
     let newTodos = this.state.todos.filter(todo => todo.completed === false);
 
     this.setState(() => ({
