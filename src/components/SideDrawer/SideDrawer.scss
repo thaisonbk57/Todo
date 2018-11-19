@@ -11,8 +11,12 @@
   box-shadow: 1px 0 4px black;
   transform: translateX(-105%);
   transition: transform 0.3s ease-out;
+  opacity: 0;
+  // visibility: hidden;
 }
 
 .Open {
   transform: translateX(0);
+  opacity: 1;
+  // visibility: visible;
 }
