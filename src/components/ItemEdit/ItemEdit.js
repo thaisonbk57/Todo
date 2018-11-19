@@ -28,7 +28,7 @@ class ItemEdit extends Component {
   };
 
   render() {
-    let { todo, updateTodoItemHandler } = this.props;
+    let { todo, updateTodoItemHandler, toggleEditForm } = this.props;
 
     return (
       <div className="ItemEdit">
@@ -43,6 +43,7 @@ class ItemEdit extends Component {
         <button
           onClick={() => {
             updateTodoItemHandler(todo.id, this.state.updatedTask);
+            toggleEditForm();
           }}
         />
       </div>
