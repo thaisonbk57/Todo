@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/thaisonbk57/Todo/issues"
   },
-  "homepage": "https://github.com/thaisonbk57/Todo#readme"
+  "homepage": "https://github.com/thaisonbk57/Todo#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  }
 }
