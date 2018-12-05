@@ -2,10 +2,6 @@ import React from "react";
 
 /////////////////////
 
-import "./Filter.scss";
-
-////////////////////////
-
 const Filter = props => {
   const { visibilitySwitchHandler, visibility, clearCompletedTodos } = props;
 

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 //////////////////////////
 
-import "./SideDrawer.scss";
-
 export default class SideDrawer extends Component {
   render() {
     return (

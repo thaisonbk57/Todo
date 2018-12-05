@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 ///////////////////////
 
-import "./ItemEdit.scss";
-
-///////////////////////
-
 class ItemEdit extends Component {
   state = {
     updatedTask: ""

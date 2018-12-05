@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import "./login.scss";
-
 export default class Auth extends Component {
   state = {
     username: "",

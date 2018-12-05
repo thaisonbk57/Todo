@@ -2,10 +2,6 @@ import React, { PureComponent } from "react";
 
 /////////////
 
-import "./TodoBoard.scss";
-
-//////////////
-
 import TodoList from "./TodoList/TodoList";
 import Filter from "./Filter/Filter";
 

@@ -2,10 +2,6 @@ import React from "react";
 
 //////////////////////////
 
-import "./Toolbar.scss";
-
-///////////////////////////
-
 import SideDrawerToggle from "./SideDrawerToggle/SideDrawerToggle";
 
 ///////////////////////////

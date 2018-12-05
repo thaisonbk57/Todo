@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 /////////////////////
 
-import "./TodoItem.scss";
-
-///////////////////////
-
 import ItemEdit from "./../../../../components/ItemEdit/ItemEdit";
 
 ///////////////////////

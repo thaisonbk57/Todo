@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 /////////////////////////////////
 
-import "./AddTodoForm.scss";
-
-/////////////////////////////////
-
 export default class AddTodoForm extends Component {
   state = {
     todo: {

@@ -2,10 +2,6 @@ import React, { Component } from "react";
 
 ///////////////////////////////////
 
-import "./TodoBuilder.scss";
-
-///////////////////////////////////
-
 import AddTodoForm from "./../../components/AddTodoForm/AddTodoForm";
 import TodoBoard from "./../TodoBoard/TodoBoard";
 
