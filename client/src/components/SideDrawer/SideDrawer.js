@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-//////////////////////////
+import Navigation from "./../Navigation/Navigation";
 
 export default class SideDrawer extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class SideDrawer extends Component {
             fontWeight: 300
           }}
         >
-          This section is under construction.
+          <Navigation />
         </h1>
       </div>
     );

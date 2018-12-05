@@ -1,0 +1,22 @@
+.Navigation {
+  .Navbar {
+  }
+
+  .NavItem {
+    margin-bottom: 2rem;
+  }
+
+  .NavLink {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-highlight;
+    }
+
+    &.active {
+      color: $color-highlight;
+    }
+  }
+}
