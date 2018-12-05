@@ -3,13 +3,13 @@ import React from "react";
 /////////////////////
 
 const Filter = props => {
-  const { visibilitySwitchHandler, visibility, clearCompletedTodos } = props;
+  const { visibility } = props;
 
   return (
     <div className="Filter">
       <button
         onClick={() => {
-          visibilitySwitchHandler("all");
+          //@TODO: filter function 'all'
         }}
         className={visibility === "all" ? "btn btn-sm active" : "btn btn-sm"}
       >
@@ -17,7 +17,7 @@ const Filter = props => {
       </button>
       <button
         onClick={() => {
-          visibilitySwitchHandler("active");
+          //@TODO: filter function 'active'
         }}
         className={visibility === "active" ? "btn btn-sm active" : "btn btn-sm"}
       >
@@ -25,7 +25,7 @@ const Filter = props => {
       </button>
       <button
         onClick={() => {
-          visibilitySwitchHandler("completed");
+          //@TODO: filter function 'completed'
         }}
         className={
           visibility === "completed" ? "btn btn-sm active" : "btn btn-sm"
@@ -35,7 +35,7 @@ const Filter = props => {
       </button>
       <button
         onClick={() => {
-          clearCompletedTodos();
+          //@TODO: clear all todo items
         }}
         className="btn btn-sm"
         style={{ color: "red" }}

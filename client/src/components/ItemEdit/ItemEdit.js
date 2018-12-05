@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-///////////////////////
-
 class ItemEdit extends Component {
   state = {
     updatedTask: ""
@@ -24,7 +22,7 @@ class ItemEdit extends Component {
   };
 
   render() {
-    let { todo, updateTodoItemHandler, toggleEditForm } = this.props;
+    let { todo, toggleEditForm } = this.props;
 
     return (
       <div className="ItemEdit">
@@ -38,7 +36,7 @@ class ItemEdit extends Component {
         />
         <button
           onClick={() => {
-            updateTodoItemHandler(todo.id, this.state.updatedTask);
+            //@TODO: update Todo Item (_id, newContent)
             toggleEditForm();
           }}
         />

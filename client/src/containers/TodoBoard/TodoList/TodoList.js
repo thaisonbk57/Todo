@@ -1,33 +1,22 @@
 import React from "react";
-
-//////////////////////////
+import { connect } from "react-redux";
 
 import TodoItem from "./TodoItem/TodoItem";
 
-/////////////////////////////
 const TodoList = props => {
-  let {
-    todos,
-    toggleTodoCompleteHandler,
-    deleteTodoItemHandler,
-    updateTodoItemHandler
-  } = props;
-
   return (
     <ul className="TodoList">
-      {todos.map(todo => {
-        return (
-          <TodoItem
-            toggleTodoCompleteHandler={toggleTodoCompleteHandler}
-            deleteTodoItemHandler={deleteTodoItemHandler}
-            updateTodoItemHandler={updateTodoItemHandler}
-            key={todo.id}
-            todo={todo}
-          />
-        );
+      {props.todos.map(todo => {
+        return <TodoItem key={todo._id} todo={todo} />;
       })}
     </ul>
   );
 };
 
-export default TodoList;
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  };
+};
+
+export default connect(mapStateToProps)(TodoList);

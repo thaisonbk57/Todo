@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 
-/////////////////////
-
 import ItemEdit from "./../../../../components/ItemEdit/ItemEdit";
-
-///////////////////////
 
 // create point-of-time for catch dbClick event both on mobile and desktop
 let touchtime = 0;
@@ -23,39 +19,28 @@ class TodoItem extends Component {
   };
 
   render() {
-    let {
-      todo,
-      toggleTodoCompleteHandler,
-      deleteTodoItemHandler,
-      updateTodoItemHandler
-    } = this.props;
+    let { todo } = this.props;
 
     return this.state.editFormShow ? (
-      <ItemEdit
-        todo={todo}
-        updateTodoItemHandler={updateTodoItemHandler}
-        toggleEditForm={this.toggleEditForm}
-      />
+      <ItemEdit todo={todo} toggleEditForm={this.toggleEditForm} />
     ) : (
       <li className="TodoItem">
         <div className="TodoContent">
           <input
             type="checkbox"
-            id={todo.id}
+            id={todo._id}
             onChange={() => {
-              toggleTodoCompleteHandler(todo.id);
+              //@TODO: toggle completeItem
             }}
             defaultChecked={todo.completed}
           />
-          <label htmlFor={todo.id} />
+          <label htmlFor={todo._id} />
           <span
-            // TODO: changed the event to catch double Click event on touch devices
             onClick={() => {
               // if the difference between 2 clicks < 500ms => dbClick
-              if (new Date().getTime() - touchtime < 500) {
+              if (new Date().getTime() - touchtime < 300) {
                 this.toggleEditForm();
               }
-              // update new touchTime
               touchtime = new Date().getTime();
             }}
             className="task"
@@ -65,7 +50,7 @@ class TodoItem extends Component {
           <span
             className="delete"
             onClick={() => {
-              deleteTodoItemHandler(todo.id);
+              //@TODO: delete item action
             }}
           />
         </div>
