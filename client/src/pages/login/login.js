@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./auth.scss";
+import "./login.scss";
 
 export default class Auth extends Component {
   state = {
@@ -48,12 +48,7 @@ export default class Auth extends Component {
               onChange={this.onChangedHandler}
             />
           </div>
-          <input
-            role="button"
-            className="btn btn-primary"
-            type="submit"
-            value="Login"
-          />
+          <input className="btn btn-primary" type="submit" value="Login" />
         </form>
       </div>
     );

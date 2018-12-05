@@ -9,7 +9,7 @@ import "./App.scss";
 import Layout from "./HOC/Layout/Layout";
 import TodoBuilder from "./containers/TodoBuilder/TodoBuilder";
 import Page404 from "./pages/404/404";
-import Auth from "./pages/auth/auth";
+import Login from "./pages/login/login";
 
 //////////////////////////////////////////
 
@@ -20,7 +20,7 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route path="/" exact component={TodoBuilder} />
-            <Route path="/login" component={Auth} />
+            <Route path="/signup" component={Login} />
             <Route component={Page404} />
           </Switch>
         </Layout>
