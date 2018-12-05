@@ -3,8 +3,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+// const jwt = require("jsonwebtoken");
+// const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 
 const todoRoutes = require("./routes/todo.route");
@@ -21,6 +21,7 @@ mongoose
   })
   .catch(err => {
     console.log("ERROR. Failed to connect to database");
+    // console.log(err);
   });
 
 const app = express();

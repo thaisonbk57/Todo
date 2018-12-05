@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-/////////////////////////////////
+import { addTodo, fetchTodos } from "./../../store/actions";
 
-export default class AddTodoForm extends Component {
+class AddTodoForm extends Component {
   state = {
     todo: {
-      id: null,
       task: "",
       completed: false
     }
@@ -25,11 +25,11 @@ export default class AddTodoForm extends Component {
   submitHandler = e => {
     // click || press Enter key
     if (e.type === "click" || e.keyCode === 13) {
-      this.props.addTodoHandler({
-        ...this.state.todo,
-        id: new Date().getTime()
-      });
+      this.props.addTodo(this.state.todo);
 
+      // this.props.fetchTodos();
+
+      // reset the form
       this.setState(state => {
         return {
           todo: { ...state.todo, task: "" }
@@ -55,7 +55,6 @@ export default class AddTodoForm extends Component {
             }}
           />
           <button
-            // using Timestamp as ID of new TodoItem
             onClick={e => {
               this.submitHandler(e);
             }}
@@ -65,3 +64,19 @@ export default class AddTodoForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addTodo: todo => {
+      dispatch(addTodo(todo));
+    },
+    fetchTodos: () => {
+      dispatch(fetchTodos());
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(AddTodoForm);

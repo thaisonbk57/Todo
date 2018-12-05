@@ -1,6 +1,8 @@
-import { GET_TODOS } from "./actions";
+import { GET_TODOS, ADD_TODO, DELETE_TODO } from "./actions";
 
-const initState = {};
+const initState = {
+  todos: []
+};
 
 export default function(state = initState, action) {
   switch (action.type) {
@@ -8,6 +10,19 @@ export default function(state = initState, action) {
       return {
         todos: [...action.todos]
       };
+
+    case ADD_TODO:
+      return {
+        todos: [...state.todos, action.todo]
+      };
+
+    case DELETE_TODO:
+      return {
+        todos: state.todos.filter(todo => {
+          return todo._id !== action.todoId;
+        })
+      };
+
     default:
       return state;
   }

@@ -9,8 +9,6 @@ class TodoBoard extends PureComponent {
   };
 
   render() {
-    let { clearCompletedTodos } = this.props;
-
     return (
       <div className="TodoBoard">
         <TodoList />

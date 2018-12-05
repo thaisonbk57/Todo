@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { deleteTodo } from "./../../../../store/actions";
 
 import ItemEdit from "./../../../../components/ItemEdit/ItemEdit";
 
@@ -50,7 +52,7 @@ class TodoItem extends Component {
           <span
             className="delete"
             onClick={() => {
-              //@TODO: delete item action
+              this.props.deleteTodo(todo._id);
             }}
           />
         </div>
@@ -59,4 +61,15 @@ class TodoItem extends Component {
   }
 }
 
-export default TodoItem;
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteTodo: todoId => {
+      dispatch(deleteTodo(todoId));
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(TodoItem);

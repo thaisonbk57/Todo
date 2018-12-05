@@ -22,7 +22,7 @@ class ItemEdit extends Component {
   };
 
   render() {
-    let { todo, toggleEditForm } = this.props;
+    let { toggleEditForm } = this.props;
 
     return (
       <div className="ItemEdit">

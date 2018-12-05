@@ -8,16 +8,15 @@ export const DELETE_TODO = "DELETE_TODO";
 export const UPDATE_TODO = "UPDATE_TODO";
 
 // @param: todo Array[Object]
-export const getTodos = todos => ({
-  type: GET_TODOS,
-  todos
-});
 
 export const fetchTodos = () => dispatch => {
   axios
     .get(`${baseURL}/api/todos`)
     .then(response => {
-      dispatch(getTodos(response.data.todos));
+      dispatch({
+        type: GET_TODOS,
+        todos: response.data.todos
+      });
     })
     .catch(err => {
       console.log("Error!");
@@ -25,9 +24,32 @@ export const fetchTodos = () => dispatch => {
 };
 
 // @param: todo: objects
-export const addTodo = todo => {
-  return {
-    type: ADD_TODO,
-    todo
-  };
+export const addTodo = todo => dispatch => {
+  axios
+    .post(`${baseURL}/api/todos`, todo)
+    .then(response => {
+      console.log(response);
+      dispatch({
+        type: ADD_TODO,
+        todo: response.data.todo
+      });
+    })
+    .catch(err => {
+      console.log("Error!");
+    });
+};
+
+export const deleteTodo = todoId => dispatch => {
+  axios
+    .delete(`${baseURL}/api/todos/${todoId}`)
+    .then(response => {
+      console.log(response);
+      dispatch({
+        type: DELETE_TODO,
+        todoId
+      });
+    })
+    .catch(err => {
+      console.log("ERROR! Item couldn't be deleted.");
+    });
 };
