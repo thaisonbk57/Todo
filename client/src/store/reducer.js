@@ -16,6 +16,16 @@ export default function(state = initState, action) {
         todos: [...state.todos, action.todo]
       };
 
+    case actionTypes.UPDATE_TODO:
+      return {
+        todos: state.todos.map(todo => {
+          if (todo._id === action.updatedTodo._id) {
+            return action.updatedTodo;
+          }
+          return todo;
+        })
+      };
+
     case actionTypes.DELETE_TODO:
       return {
         todos: state.todos.filter(todo => {

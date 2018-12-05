@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { updateTodo } from "./../../store/actions";
 
 class ItemEdit extends Component {
   state = {
@@ -21,9 +24,16 @@ class ItemEdit extends Component {
     });
   };
 
-  render() {
-    let { toggleEditForm } = this.props;
+  submitUpdate = () => {
+    this.props.updateTodo(this.props.todo._id, {
+      ...this.props.todo,
+      task: this.state.updatedTask
+    });
 
+    this.props.toggleEditForm();
+  };
+
+  render() {
     return (
       <div className="ItemEdit">
         <input
@@ -34,15 +44,23 @@ class ItemEdit extends Component {
           type="text"
           className="form-control"
         />
-        <button
-          onClick={() => {
-            //@TODO: update Todo Item (_id, newContent)
-            toggleEditForm();
-          }}
-        />
+        <button onClick={this.submitUpdate} />
       </div>
     );
   }
 }
 
-export default ItemEdit;
+const mapDispatchToProps = dispatch => {
+  return {
+    updateTodo: (id, updatedTodo) => {
+      dispatch(updateTodo(id, updatedTodo));
+    }
+  };
+};
+
+// @TODO: how to pass updatedTodo to axios.put to update the todoItem
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ItemEdit);

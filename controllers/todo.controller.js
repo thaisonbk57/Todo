@@ -31,6 +31,22 @@ module.exports.addTodo = (req, res, next) => {
   });
 };
 
+module.exports.updateTodo = (req, res, next) => {
+  const id = req.params.todoId;
+  const updatedTodo = req.body.updatedTodo;
+
+  Todo.findOne({ _id: id }, function(err, todo) {
+    if (err) return res.status(501).json({ error: err });
+
+    todo.task = updatedTodo.task;
+
+    todo.save(function(err, updatedTodo) {
+      if (err) return res.status(501).json({ error: err });
+      res.json({ updatedTodo });
+    });
+  });
+};
+
 module.exports.deleteTodo = (req, res, next) => {
   Todo.deleteOne({ _id: req.params.todoId }, err => {
     if (err) {

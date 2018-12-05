@@ -38,6 +38,20 @@ export const addTodo = todo => dispatch => {
     });
 };
 
+export const updateTodo = (id, updatedTodo) => dispatch => {
+  axios
+    .put(`${baseURL}/api/todos/${id}`, { updatedTodo })
+    .then(response => {
+      dispatch({
+        type: UPDATE_TODO,
+        updatedTodo: response.data.updatedTodo
+      });
+    })
+    .catch(err => {
+      console.log("Error, Item could not be updated!");
+    });
+};
+
 // @param: todoId: String
 export const deleteTodo = todoId => dispatch => {
   axios
