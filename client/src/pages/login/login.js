@@ -46,7 +46,7 @@ export default class Auth extends Component {
               onChange={this.onChangedHandler}
             />
           </div>
-          <input className="btn btn-primary" type="submit" value="Login" />
+          <input className="btn Login-btn" type="submit" value="Login" />
         </form>
       </div>
     );
