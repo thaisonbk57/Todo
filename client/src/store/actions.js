@@ -8,7 +8,6 @@ export const DELETE_TODO = "DELETE_TODO";
 export const UPDATE_TODO = "UPDATE_TODO";
 
 // @param: todo Array[Object]
-
 export const fetchTodos = () => dispatch => {
   axios
     .get(`${baseURL}/api/todos`)
@@ -39,6 +38,7 @@ export const addTodo = todo => dispatch => {
     });
 };
 
+// @param: todoId: String
 export const deleteTodo = todoId => dispatch => {
   axios
     .delete(`${baseURL}/api/todos/${todoId}`)
